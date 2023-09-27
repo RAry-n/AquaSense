@@ -16,13 +16,47 @@
         android:theme="@style/Theme.MapBoxApp"
         tools:targetApi="31">
         <activity
-            android:name=".LocationPickerActivity"
+            android:name=".MainActivity2"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".forgotPassword"
+            android:exported="true" >
+
+        </activity>
+        <activity
+            android:name=".SignUp1"
+            android:exported="true" >
+
+        </activity>
+        <activity
+            android:name=".SignUpautho"
+            android:exported="true" >
+
+
+        </activity>
+        <activity
+            android:name=".SignIn"
+            android:exported="true" >
+        </activity>
+        <activity
+            android:name=".ReportProblem"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".LocationPickerActivity"
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".MapActivity"
@@ -32,6 +66,10 @@
             android:exported="true">
 
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

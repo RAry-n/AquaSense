@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUp1"
+    android:background="@drawable/signup">
+    <TextView
+        android:id="@+id/txtSignUp"
+        style="@style/txtPoppinssemibold35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="48dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="Sign Up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/lbl_sign_up" />
+
+    <TextView
+        android:id="@+id/txtSelectcategory"
+        style="@style/txtPoppinsregular20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:gravity="start"
+        android:singleLine="true"
+        android:text="Select category"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSignUp"
+        tools:text="@string/lbl_select_category" />
+
+    <RadioButton
+
+
+        android:id="@+id/rbAuthority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:buttonTint="@color/cyan_900"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins"
+        android:paddingStart="10dp"
+        android:singleLine="true"
+        android:text="@string/lbl_authority"
+        android:textColor="@color/cyan_900"
+        android:textFontWeight="400"
+        android:textSize="@dimen/_18pxh"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.087"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSelectcategory"
+        tools:text="@string/lbl_authority" />
+
+    <RadioButton
+        android:checked="true"
+        android:id="@+id/rbResident"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="84dp"
+        android:buttonTint="@color/cyan_900"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins"
+        android:paddingStart="10dp"
+        android:singleLine="true"
+        android:text="@string/lbl_resident"
+        android:textColor="@color/cyan_900"
+        android:textFontWeight="400"
+        android:textSize="@dimen/_18pxh"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.87"
+        app:layout_constraintStart_toEndOf="@+id/rbAuthority"
+        app:layout_constraintTop_toBottomOf="@+id/txtSelectcategory"
+        tools:text="@string/lbl_resident" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="30dp"
+        android:id="@+id/nameInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        cornerRadius="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded"
+        android:hint="Name"
+        app:layout_constraintTop_toBottomOf="@+id/rbAuthority"
+        tools:layout_editor_absoluteX="32dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameEntryField"
+            cornerRadius="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:lines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        cornerRadius="25dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/rounded"
+        android:hint="Email Address"
+        app:layout_constraintEnd_toEndOf="@+id/nameInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/nameInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/nameInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/EmailEntryField"
+            cornerRadius="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:lines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/passwordInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        cornerRadius="25dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/rounded"
+        android:hint="Password"
+        app:layout_constraintEnd_toEndOf="@+id/emailInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/emailInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/emailInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordEntryField"
+            cornerRadius="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:lines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnresident"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/backgroundbutton"
+        android:text="Create"
+        android:textColor="#1B4965"
+        app:layout_constraintEnd_toEndOf="@+id/passwordInputLayout"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="@+id/passwordInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout" />
+</androidx.constraintlayout.widget.ConstraintLayout>

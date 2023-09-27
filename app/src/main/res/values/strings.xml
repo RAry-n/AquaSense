@@ -5,4 +5,35 @@
     <string name="mapbox_secret_token">sk.eyJ1IjoiYXJpdHJhOTc4OCIsImEiOiJjbG16MmRyM2YwNHFpMm9tdmVhczB3N3lxIn0.M6EB7L_JPbxuM9T_i0ExFA</string>
     <string name="cancel">CANCEL</string>
     <string name="Set_Location">Select a location</string>
+    <string name="loading">Loading…</string>
+    <string name="no_internet_connection">No internet connection!</string>
+    <string name="lbl_sign_in">Sign In</string>
+    <string name="lbl_hey_there">Hey there!</string>
+    <string name="msg_new_here_sign">New Here? Sign Up</string>
+    <string name="lbl_new_here">New Here?</string>
+
+    <string name="msg_forgot_password">forgot password?</string>
+
+    <string name="lbl_code">Code</string>
+    <string name="lbl_authority">Authority</string>
+    <string name="lbl_create">Create</string>
+    <string name="lbl_user_name">User Name</string>
+    <string name="lbl_sign_up">Sign Up</string>
+    <string name="lbl_select_category">Select category</string>
+    <string name="lbl_password">Password</string>
+    <string name="lbl_name">Name</string>
+    <string name="lbl_add_a_photo">Add a photo</string>
+    <string name="lbl_location">Location</string>
+    <string name="lbl_description">Description</string>
+    <string name="lbl_select_one">Select one</string>
+    <string name="lbl_resident">Resident</string>
+    <string name="lbl_report_an_issue">Report an issue </string>
+    <string name="lbl_submit">Submit</string>
+    <string name="lbl_email_id">Email ID</string>
+    <string name="lbl_type">Type</string>
+    <string name="hello_blank_fragment">hi</string>
+    <string name="home">HOME</string>
+    <string name="settings">SETTINGS</string>
+    <string name="solutions">SOLUTIONS</string>
+    <string name="issues">ISSUES</string>
 </resources>

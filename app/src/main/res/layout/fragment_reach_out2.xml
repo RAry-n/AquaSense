@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReachOut"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:id="@+id/map_icon"
+        android:layout_width="33dp"
+        android:layout_height="26.12dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="672dp"
+        android:src="@drawable/mapicon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.902"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/aquasense"
+        android:layout_width="183dp"
+        android:layout_height="43dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:fontFamily="@font/aclonica"
+        android:gravity="top"
+        android:text="Aquasense"
+        android:textSize="33dp"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.283" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/aquasense"
+        >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <Button
+        android:id="@+id/btnAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#All"/>
+
+    <Button
+            android:id="@+id/btnUrbFlood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#Urban Flood"/>
+
+    <Button
+        android:id="@+id/btnRuralFlood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#Rural Flood" />
+
+    <Button
+            android:id="@+id/btnDrought"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#Drought"/>
+        <Button
+            android:id="@+id/btnOilSpill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#Oil Spill"/>
+        <Button
+            android:id="@+id/btnTsunami"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#Tsunami"/>
+        <Button
+            android:id="@+id/btnPollutedRiver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#Polluted River"/>
+        <Button
+            android:id="@+id/btnDrainage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#Drainage Problem"/>
+
+</LinearLayout>
+</HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_marginBottom="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/issue_review_itemlayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
