@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MapBoxApp</string>
+    <string name="mapbox_public_token">pk.eyJ1IjoiYXJpdHJhOTc4OCIsImEiOiJjbG16MXVkM3IxY3k2MndudnB1eWp6cm01In0.0a62xnPfsD67MQYJieU5og</string>
+    <string name="mapbox_access_token">sk.eyJ1IjoiYXJpdHJhOTc4OCIsImEiOiJjbG16MXppeHgwYzMwMnVsMTZkMjQ1NTR6In0.yjqducaCOSmqGwYbHMHSew</string>
+    <string name="mapbox_secret_token">sk.eyJ1IjoiYXJpdHJhOTc4OCIsImEiOiJjbG16MmRyM2YwNHFpMm9tdmVhczB3N3lxIn0.M6EB7L_JPbxuM9T_i0ExFA</string>
+    <string name="cancel">CANCEL</string>
+    <string name="Set_Location">Select a location</string>
+</resources>
