@@ -7,8 +7,8 @@ data class problems(
     val title: String,
     val type: String,
     val city: String,
-    val locationLat: Long,
-    val locationLong: Long,
+    val locationLat: Double,
+    val locationLong: Double,
     val username: String,
     val userimageURL: String?
 )

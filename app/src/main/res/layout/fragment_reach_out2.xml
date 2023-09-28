@@ -39,72 +39,101 @@
         app:layout_constraintVertical_bias="0.283" />
 
     <HorizontalScrollView
+        android:id="@+id/horizontalScroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/aquasense"
         >
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-    <Button
-        android:id="@+id/btnAll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="#All"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="15dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/black"
+                android:text="#All"/>
 
-    <Button
-            android:id="@+id/btnUrbFlood"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="#Urban Flood"/>
+            <Button
+                android:id="@+id/btn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:textColor="@color/black"
+                android:backgroundTint="#CAE9FF"
+                android:textAllCaps="false"
+                android:text="#Urban Flood"/>
 
-    <Button
-        android:id="@+id/btnRuralFlood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="#Rural Flood" />
+            <Button
+                android:id="@+id/btn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:textColor="@color/black"
+                android:backgroundTint="#CAE9FF"
+                android:text="#Rural Flood" />
 
-    <Button
-            android:id="@+id/btnDrought"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="#Drought"/>
-        <Button
-            android:id="@+id/btnOilSpill"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="#Oil Spill"/>
-        <Button
-            android:id="@+id/btnTsunami"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="#Tsunami"/>
-        <Button
-            android:id="@+id/btnPollutedRiver"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="#Polluted River"/>
-        <Button
-            android:id="@+id/btnDrainage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="#Drainage Problem"/>
 
-</LinearLayout>
-</HorizontalScrollView>
+            <Button
+                android:id="@+id/btn3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:textColor="@color/black"
+                android:backgroundTint="#CAE9FF"
+                android:text="#Oil Spill"/>
+            <Button
+                android:id="@+id/btn4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:textColor="@color/black"
+                android:backgroundTint="#CAE9FF"
+                android:text="#Tsunami"/>
+            <Button
+                android:id="@+id/btn5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:textColor="@color/black"
+                android:backgroundTint="#CAE9FF"
+                android:text="#Polluted River"/>
+            <Button
+                android:id="@+id/btn6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:textColor="@color/black"
+                android:backgroundTint="#CAE9FF"
+                android:text="#Drought"/>
+            <Button
+                android:id="@+id/btn7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:textColor="@color/black"
+                android:backgroundTint="#CAE9FF"
+                android:text="#Drainage Problem"/>
+
+        </LinearLayout>
+    </HorizontalScrollView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_marginBottom="2dp"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/issue_review_itemlayout" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScroll"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

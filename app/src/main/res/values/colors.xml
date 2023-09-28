@@ -17,4 +17,5 @@
     <color name="cyan_900">#1b4965</color>
     <color name="white_A700">#ffffff</color>
     <color name="blue_50">#ebf2fa</color>
+    <color name="tint">#CAE9FF</color>
 </resources>

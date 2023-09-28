@@ -1,21 +1,26 @@
 package com.example.mapboxapp.Adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.mapboxapp.R
-import com.example.mapboxapp.ReachOut
-import com.example.mapboxapp.dataclass.problems
+import com.example.mapboxapp.dataclass.solutions
 
 
-class ReachOutAdapter (val context: Context, private  val itemList: ArrayList<problems> = ArrayList<problems>(), private val onItemClickListener: ReachOut):RecyclerView.Adapter<ReachOutAdapter.MyViewHolder>(){
+class ReachOutAdapter (private val itemList: ArrayList<solutions> = ArrayList<solutions>()):RecyclerView.Adapter<ReachOutAdapter.MyViewHolder>(){
 
-    private val headings = arrayListOf<String>()
+    private lateinit var mListener: onItemClickListener
+
+    interface onItemClickListener{
+        fun onItemClick(position: Int)
+    }
+
+    fun setOnItemClickListener(listener: onItemClickListener){
+        mListener = listener
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
@@ -27,37 +32,41 @@ class ReachOutAdapter (val context: Context, private  val itemList: ArrayList<pr
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentitem = itemList[position]
+        holder.setIsRecyclable(false)
+        holder.providedByTV.text = currentitem.providedBy
+//        holder.problemTV.text = currentitem.problem
+        holder.descriptionTV.text = currentitem.description
+        holder.typeTV.text = currentitem.type
+        holder.providedByTV.text = currentitem.providedBy
+        holder.upvoteCount.text = currentitem.upvoteCount.toString()
 
-        holder.user_name.text=currentitem.username
-        holder.location.text=currentitem.locationLat.toString()+" "+currentitem.locationLat.toString()
-        holder.title.text=currentitem.title
-        Glide.with(context).load(currentitem.imageURL).into(holder.issueImage)
-        Glide.with(context).load(currentitem.userimageURL).into(holder.userImage)
-
-
-        holder.itemView.setOnClickListener{
-            onItemClickListener.onItemItemClicked(position)
+        holder.upvoteButton.setOnClickListener {
+            currentitem.upvoteCount++
         }
 
-        currentitem.title?.let { headings.add(it) }
+        holder.donateButton.setOnClickListener{
+//            onItemClickListener.onItemItemClicked(position)
+        }
     }
 
     override fun getItemCount(): Int {
         return itemList.size
     }
 
-    fun updateItemList(itemList: List<problems>){
-        this.itemList.clear()
-        this.itemList.addAll(itemList)
-        notifyDataSetChanged()
-    }
+//    fun updateItemList(itemList: List<solutions>){
+//        this.itemList.clear()
+//        this.itemList.addAll(itemList)
+//        notifyDataSetChanged()
+//    }
 
     class MyViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView){
-        val user_name: TextView= itemView.findViewById(R.id.user_name)
-        val title : TextView= itemView.findViewById(R.id.title)
-        val location : TextView= itemView.findViewById(R.id.location)
-        val userImage : ImageView = itemView.findViewById(R.id.userImage)
-        val issueImage : ImageView = itemView.findViewById(R.id.issue)
+        val providedByTV: TextView= itemView.findViewById(R.id.providedBy)
+        //        val problemTV : TextView= itemView.findViewById(R.id.problem)
+        val descriptionTV : TextView= itemView.findViewById(R.id.description)
+        val typeTV : TextView = itemView.findViewById(R.id.type)
+        val upvoteButton : ImageView = itemView.findViewById(R.id.upvoteButton)
+        val upvoteCount : TextView = itemView.findViewById(R.id.upvoteCount)
+        val donateButton: ImageView = itemView.findViewById(R.id.donateButton)
     }
 
 }

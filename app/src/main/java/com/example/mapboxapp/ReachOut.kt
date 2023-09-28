@@ -1,45 +1,53 @@
 package com.example.mapboxapp
 
-import com.example.mapboxapp.Adapter.ReachOutAdapter
-import com.example.mapboxapp.Models.ReachOutViewModel
+import android.graphics.Color.parseColor
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import android.widget.Button
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mapboxapp.Adapter.ReachOutAdapter
 import com.example.mapboxapp.dataclass.problems
+import com.example.mapboxapp.dataclass.solutions
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ReachOut.newInstance] factory method to
- * create an instance of this fragment.
- */
-
-private lateinit var viewModel: ReachOutViewModel
+private lateinit var dbref : DatabaseReference
+private lateinit var dbref1 : DatabaseReference
 private lateinit var itemRecyclerView: RecyclerView
-lateinit var adapter: ReachOutAdapter
+private lateinit var firebaseAuth: FirebaseAuth
+
 var items = ArrayList<problems>()
 
-class ReachOut : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+val isChecked = arrayListOf<Boolean>(
+    true,false,false,false,false,false,false,false
+)
 
+val problemTypes = arrayOf(
+    "none",
+    "Urban Flooding",
+    "Rural Flooding",
+    "Oil Spill",
+    "Tsunami",
+    "Polluted River",
+    "Drought",
+    "Drainage problems"
+)
+
+private val solutionList = ArrayList<solutions>()
+
+class ReachOut : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
         }
     }
 
@@ -51,25 +59,6 @@ class ReachOut : Fragment() {
         return inflater.inflate(R.layout.fragment_reach_out2, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ReachOut.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ReachOut().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -77,39 +66,86 @@ class ReachOut : Fragment() {
         itemRecyclerView = view.findViewById(R.id.recyclerView)
         itemRecyclerView.layoutManager = LinearLayoutManager(context)
         itemRecyclerView.setHasFixedSize(true)
-        adapter = ReachOutAdapter(requireContext(), items,this)
-        itemRecyclerView.adapter= adapter
-        createDummyItemList()
 
-        viewModel = ViewModelProvider(this).get(ReachOutViewModel::class.java)
-        viewModel.allItems.observe(viewLifecycleOwner, Observer {
-            adapter.updateItemList(it)
-        })
+        dbref = FirebaseDatabase.getInstance().getReference("solutions")
+
+        fetchRecyclerView()
+        callUser(view)
+
     }
 
-    private fun createDummyItemList(){
-        for (i in 1.. 100){
-            //items.add((problems("Item"+i)))
+    private fun callUser(view: View) {
+        val btn0: Button = view.findViewById(R.id.btn0)
+        val btn1: Button = view.findViewById(R.id.btn1)
+        val btn2: Button = view.findViewById(R.id.btn2)
+        val btn3: Button = view.findViewById(R.id.btn3)
+        val btn4: Button = view.findViewById(R.id.btn4)
+        val btn5: Button = view.findViewById(R.id.btn5)
+        val btn6: Button = view.findViewById(R.id.btn6)
+        val btn7: Button = view.findViewById(R.id.btn7)
+
+        val btn = arrayListOf<Button>(btn0,btn1,btn2,btn3,btn4,btn5,btn6,btn7)
+
+        for(i in 0..7){
+            btn[i].setOnClickListener {
+                if(isChecked[i]){
+                    isChecked[i]=false
+                    btn[i].setTextColor(parseColor("#000000"))
+                    btn[i].backgroundTintList= this.getResources().getColorStateList(R.color.tint)
+                }else{
+                    isChecked[i]=true
+                    btn[i].setTextColor(parseColor("#FFFFFF"))
+                    btn[i].backgroundTintList= this.getResources().getColorStateList(R.color.black)
+                    if(i==0){
+                        for(j in 1..7){
+                            isChecked[j]=false
+                            btn[j].setTextColor(parseColor("#000000"))
+                            btn[j].backgroundTintList= this.getResources().getColorStateList(R.color.tint)
+                        }
+                    } else{
+                        isChecked[0]=false
+                        btn[0].setTextColor(parseColor("#000000"))
+                        btn[0].backgroundTintList= this.getResources().getColorStateList(R.color.tint)
+                    }
+                }
+                fetchRecyclerView()
+            }
         }
     }
 
-    fun onItemItemClicked(position: Int){
-//        val intent = Intent(this@ReachOut.requireContext(),TutorDes::class.java)
-//        intent.putExtra("firstname", items[position].firstName)
-//        intent.putExtra("lastname",items[position].lastName)
-//        intent.putExtra("image", items[position].image)
-//        intent.putExtra("monthlyfee",items[position].monthlyfee)
-//        intent.putExtra("doubtfee", items[position].doubtfee)
-//        intent.putExtra("qualifications", items[position].qualifications)
-//        intent.putExtra("dayandtime", items[position].dayandtime)
-//        intent.putExtra("state", items[position].state)
-//        intent.putExtra("adress", items[position].adress)
-//        intent.putExtra("averagerating", items[position].averagerating)
-//        intent.putExtra("hiringstatus", items[position].hiringstatus)
-//        intent.putExtra("students", items[position].studentssubscribed)
-//        intent.putExtra("email",items[position].email)
-//        intent.putExtra("ratings",items[position].averagerating)
-//        intent.putExtra("uid",items[position].uid)
-        //startActivity(intent)
+    private fun fetchRecyclerView() {
+        solutionList.clear()
+        for(i in 1..7){
+            if(isChecked[i] or isChecked[0]){
+                dbref.child(problemTypes[i]).addValueEventListener( object: ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        if(snapshot.exists()){
+                            for(dataSnap in snapshot.children){
+                                val data = dataSnap.getValue(solutions::class.java)
+                                solutionList.add(data!!)
+                            }
+
+                            val itemAdapter = ReachOutAdapter(solutionList)
+                            itemRecyclerView.adapter = itemAdapter
+
+                            itemAdapter.setOnItemClickListener(object: ReachOutAdapter.onItemClickListener{
+                                override fun onItemClick(position: Int) {
+                                    //onClick
+
+                                }
+
+                            })
+
+                        }
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {
+                        Toast.makeText(activity, error.toString(), Toast.LENGTH_LONG).show()
+                    }
+                })
+            }
+        }
     }
+
+
 }

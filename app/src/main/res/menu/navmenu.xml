@@ -7,8 +7,8 @@
         android:enabled="true"
         android:visible="true"
         app:showAsAction="always"
-        android:icon="@drawable/homeicon"
-        app:cnb_iconColor="#9C27B0"
+        android:icon="@drawable/homenav"
+        app:cnb_iconColor="@color/white"
 
         />
     <item
@@ -17,8 +17,8 @@
         android:enabled="true"
         android:visible="true"
         app:showAsAction="always"
-        android:icon="@drawable/issuesicon"
-        app:cnb_iconColor="#8BC34A"
+        android:icon="@drawable/problemnav"
+        app:cnb_iconColor="@color/white"
 
         />
     <item
@@ -27,18 +27,18 @@
         android:enabled="true"
         android:visible="true"
         app:showAsAction="always"
-        android:icon="@drawable/checktick"
-        app:cnb_iconColor="#00BCD4"
+        android:icon="@drawable/solutionnav"
+        app:cnb_iconColor="@color/white"
 
         />
     <item
         android:id="@+id/settings"
         android:title = "@string/settings"
-        android:icon="@drawable/settingsicon"
+        android:icon="@drawable/settingnav"
         android:enabled="true"
         android:visible="true"
         app:showAsAction="always"
-        app:cnb_iconColor="#FF5722"
+        app:cnb_iconColor="@color/white"
 
         />
 

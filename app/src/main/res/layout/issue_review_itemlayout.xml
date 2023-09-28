@@ -3,82 +3,138 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="300dp"
     android:layout_margin="4dp"
     app:cardCornerRadius="15dp"
     app:cardElevation="5dp"
-    android:paddingBottom="5dp">
+    android:paddingBottom="5dp"
+    android:background="#FFFFFF">
 
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/userImage"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="24dp"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/img">
-
-    </de.hdodenhof.circleimageview.CircleImageView>
-
-    <TextView
-        android:id="@+id/user_name"
-        android:layout_width="105dp"
-        android:layout_height="29dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="84dp"
-        android:fontFamily="@font/poppins_medium"
-        android:includeFontPadding="false"
-        android:paddingLeft="10dp"
-        android:text="User Name"
-        android:textAlignment="viewStart"
-        android:textSize="20dp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/location"
-        android:layout_width="82dp"
-        android:layout_height="33dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="87dp"
-        android:layout_marginTop="35dp"
-        android:fontFamily="@font/poppins_medium"
-        android:gravity="center_horizontal|top"
-        android:text="Location"
-        android:textSize="15dp" />
-
-    <ImageView
-        android:id="@+id/issue"
-        android:layout_width="342dp"
-        android:layout_height="184dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="24dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="70dp"
-        android:layout_marginBottom="15dp"
-        android:background="#EBF2FA"
-        />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="match_parent"
         android:layout_gravity="bottom">
 
+
         <TextView
-            android:id="@+id/title"
-            android:layout_width="308dp"
-            android:layout_height="53dp"
-            android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/providedBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins"
+            android:includeFontPadding="false"
+            android:text="User Name"
+            android:textAlignment="viewStart"
+            android:textColor="#1D4965"
+            android:textSize="15dp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintHorizontal_bias="0.035"
+            app:layout_constraintStart_toEndOf="@+id/user_image"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_horizontal|top"
+            android:text="#type"
+            android:textColor="#1D4965"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.029"
+            app:layout_constraintStart_toEndOf="@+id/user_image"
+            app:layout_constraintTop_toBottomOf="@+id/providedBy" />
+
+
+
+
+        <ImageButton
+            android:id="@+id/upvoteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="260dp"
+            android:layout_marginBottom="460dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+
+            android:layout_marginTop="16dp"
+            android:src="@drawable/baseline_person_24"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.046"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.39" />
+            app:layout_constraintTop_toTopOf="parent">
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+        <ImageView
+            android:id="@+id/donateButton"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/donatebutton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+
+            android:background="#EBF2FA"
+            android:id="@+id/description"
+            android:layout_width="342dp"
+            android:layout_height="162dp"
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+            android:text="hi my name is adityakumar"
+            android:textSize="15dp"
+            android:overScrollMode="always"
+            android:fontFamily="@font/poppins"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_image" />
+
+        <ImageView
+            android:id="@id/upvoteButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/baseline_thumb_up_24"
+            app:layout_constraintStart_toStartOf="parent"
+            android:clickable="true"
+            app:layout_constraintTop_toBottomOf="@+id/description" />
+
+        <TextView
+            android:id="@+id/upvoteCount"
+            android:layout_width="72dp"
+            android:layout_height="23dp"
+            android:background="#CAE9FF"
+            android:fontFamily="@font/poppins"
+            android:padding="3dp"
+            android:text="00"
+            android:textColor="#1B4965"
+            android:textSize="12dp"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/upvoteButton"
+            app:layout_constraintTop_toBottomOf="@+id/description"
+            app:layout_constraintVertical_bias="0.333" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </com.google.android.material.card.MaterialCardView>
-

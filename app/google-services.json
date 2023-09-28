@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "461097188462",
+    "firebase_url": "https://waterproject-c0c86-default-rtdb.firebaseio.com",
+    "project_id": "waterproject-c0c86",
+    "storage_bucket": "waterproject-c0c86.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461097188462:android:d39613fdf9f9af1c02fa7f",
+        "android_client_info": {
+          "package_name": "com.example.mapboxapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwerkUfyTQ3Op2eY5tx7OkjALTPoTq_nQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461097188462:android:1503aad20904e21802fa7f",
+        "android_client_info": {
+          "package_name": "com.example.waterproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwerkUfyTQ3Op2eY5tx7OkjALTPoTq_nQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

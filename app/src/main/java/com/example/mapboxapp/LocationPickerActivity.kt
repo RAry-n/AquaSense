@@ -1,5 +1,6 @@
 package com.example.mapboxapp
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -12,7 +13,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.ImageView
-import android.widget.Toast
+
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.app.ActivityCompat
 import androidx.core.graphics.drawable.toBitmap
@@ -149,16 +150,17 @@ class LocationPickerActivity : AppCompatActivity() {
             if (results.isEmpty()) {
                 Log.i("SearchApiExample", "No reverse geocoding results")
             } else {
-                Toast.makeText(this@LocationPickerActivity,results[0].fullAddress, Toast.LENGTH_SHORT).show()
+
                 Log.i("SearchApiExample", "Reverse geocoding results: $results")
-                val intent = Intent(this@LocationPickerActivity,MapActivity::class.java)
+                val intent = Intent()
                 intent.putExtra("latitude",fixedPoint.latitude())
                 intent.putExtra("longitude",fixedPoint.longitude())
                 intent.putExtra("address",results[0].fullAddress)
-                Log.i("sentValueLat",fixedPoint.latitude().toString())
+                setResult(200,intent)
+                /*Log.i("sentValueLat",fixedPoint.latitude().toString())
                 Log.i("sentValueLng",fixedPoint.longitude().toString())
-                Log.i("sentValueadd",results[0].fullAddress.toString())
-                startActivity(intent)
+                Log.i("sentValueadd",results[0].fullAddress.toString())*/
+                finish()
             }
         }
 
