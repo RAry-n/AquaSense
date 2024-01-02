@@ -1,6 +1,7 @@
 package com.example.mapboxapp
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mapboxapp.Adapter.issuesAdapter
 import com.example.mapboxapp.dataclass.issues
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -53,6 +55,12 @@ class IssueFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val floatingactionbtn=view.findViewById<FloatingActionButton>(R.id.floating_action_home)
+        floatingactionbtn.setOnClickListener {
+            val intent= Intent(context,ReportProblem::class.java)
+            startActivity(intent)
+        }
 
         itemRecyclerView= view.findViewById(R.id.recyclerViewImg)
         itemRecyclerView.layoutManager = LinearLayoutManager(context)

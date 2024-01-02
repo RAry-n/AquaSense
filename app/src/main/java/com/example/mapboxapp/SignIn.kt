@@ -77,11 +77,13 @@ class SignIn : AppCompatActivity() {
                           {
                               val intent1=Intent(this@SignIn,MainActivity::class.java)
                               startActivity(intent1)
+                              finish()
                           }
                           else
                           {
                               val intent2=Intent(this@SignIn, MainActivity2::class.java)
                               startActivity(intent2)
+                              finish()
                           }
 
                       }
@@ -122,6 +124,17 @@ class SignIn : AppCompatActivity() {
         }
 
     }
+
+    override fun onStart() {
+        super.onStart()
+
+        if(auth.currentUser != null){
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }
+
     fun showProgressDialog(text:String)
     {
         dialogBox= Dialog(this)

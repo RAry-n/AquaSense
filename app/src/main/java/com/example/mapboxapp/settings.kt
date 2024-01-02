@@ -61,26 +61,26 @@ class settings : Fragment() {
                 }
 
             })
-        val view1 = view.findViewById<LinearLayout>(R.id.viewofedit)
-        view1.setOnClickListener {
-            val intent1 = Intent(requireContext(), editprofile::class.java)
-            startActivity(intent1)
-        }
-        val view2 = view.findViewById<LinearLayout>(R.id.layoutofaboutus)
-        view2.setOnClickListener {
-            val intent2 = Intent(requireContext(), aboutus::class.java)
-            startActivity(intent2)
-        }
-        val view3 = view.findViewById<LinearLayout>(R.id.layoutofprivacypolicy)
-        view3.setOnClickListener {
-            val intent3 = Intent(requireContext(), privacypolicy::class.java)
-            startActivity(intent3)
-        }
-        val view4 = view.findViewById<LinearLayout>(R.id.layoutoftermsandcondition)
-        view4.setOnClickListener {
-            val intent4 = Intent(requireContext(), termscondition::class.java)
-            startActivity(intent4)
-        }
+//        val view1 = view.findViewById<LinearLayout>(R.id.viewofedit)
+//        view1.setOnClickListener {
+//            val intent1 = Intent(requireContext(), editprofile::class.java)
+//            startActivity(intent1)
+//        }
+//        val view2 = view.findViewById<LinearLayout>(R.id.layoutofaboutus)
+//        view2.setOnClickListener {
+//            val intent2 = Intent(requireContext(), aboutus::class.java)
+//            startActivity(intent2)
+//        }
+//        val view3 = view.findViewById<LinearLayout>(R.id.layoutofprivacypolicy)
+//        view3.setOnClickListener {
+//            val intent3 = Intent(requireContext(), privacypolicy::class.java)
+//            startActivity(intent3)
+//        }
+//        val view4 = view.findViewById<LinearLayout>(R.id.layoutoftermsandcondition)
+//        view4.setOnClickListener {
+//            val intent4 = Intent(requireContext(), termscondition::class.java)
+//            startActivity(intent4)
+//        }
 
 
 

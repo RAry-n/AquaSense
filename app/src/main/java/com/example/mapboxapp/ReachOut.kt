@@ -1,5 +1,6 @@
 package com.example.mapboxapp
 
+import android.content.Intent
 import android.graphics.Color.parseColor
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mapboxapp.Adapter.ReachOutAdapter
 import com.example.mapboxapp.dataclass.problems
 import com.example.mapboxapp.dataclass.solutions
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -56,7 +58,17 @@ class ReachOut : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_reach_out2, container, false)
+        val view= inflater.inflate(R.layout.fragment_reach_out2, container, false)
+
+        val floatingactionbtn=view.findViewById<FloatingActionButton>(R.id.floating_action_reach)
+        floatingactionbtn.setOnClickListener {
+            val intent= Intent(context,writeSolution::class.java)
+            startActivity(intent)
+        }
+
+
+
+        return view
     }
 
 
