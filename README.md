@@ -45,7 +45,7 @@ A mobile application that crowd sources water-related problems from around a com
 If you have any feedback, please reach out to us at aryanrdat@gmail.com
 
 
-## Authors
+## Contributors
 
 - [@Svapak(Anjali Kumari)](https://www.github.com/Svapak)
 
