@@ -47,15 +47,15 @@ If you have any feedback, please reach out to us at aryanrdat@gmail.com
 
 ## Contributors
 
-- [@Svapak(Anjali Kumari)](https://www.github.com/Svapak)
+- [@Svapak](https://www.github.com/Svapak) Anjali Kumari
 
-- [@RAry-n(Aryan Rawat)](https://www.github.com/RAry-n)
+- [@RAry-n](https://www.github.com/RAry-n) Aryan Rawat
 
-- [@CoderAbhi27(Abhinav Kumar)](https://www.github.com/CoderAbhi27)
+- [@CoderAbhi27](https://www.github.com/CoderAbhi27) Abhinav Kumar
 
-- [@AritraBiswas9788(Aritra Biswas)](https://www.github.com/AritraBiswas9788)
+- [@AritraBiswas9788](https://www.github.com/AritraBiswas9788) Aritra Biswas
 
-- [@AdityaKumar9430(Aditya Kumar)](https://www.github.com/AdityaKumar9430)
+- [@AdityaKumar9430](https://www.github.com/AdityaKumar9430) Aditya Kumar
 
 - Diya Mondal
 
